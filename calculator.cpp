@@ -86,7 +86,7 @@ string Calculator::do_calculate()
                 if(curToken == "-"){opNumStack.push(leftNum-rightNum);continue;}
                 if(curToken == "*"){opNumStack.push(leftNum*rightNum);continue;}
                 if(curToken == "%"){opNumStack.push(fmod(leftNum,rightNum));continue;}
-                if(curToken == "/"){opNumStack.push(leftNum/rightNum);continue;}
+                if(curToken == "/"){if(rightNum==0.0)return "divisor can't be 0";opNumStack.push(leftNum/rightNum);continue;}
                 if(curToken == "^"){opNumStack.push(pow(leftNum,rightNum));continue;}
             }
         }
